@@ -1,0 +1,9 @@
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\bin\Debug\InternetSim.dll
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\bin\Debug\InternetSim.pdb
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.csproj.AssemblyReference.cache
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.AssemblyInfoInputs.cache
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.AssemblyInfo.cs
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.csproj.CoreCompileInputs.cache
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.dll
+C:\Users\Thatcher\Documents\GoDot Engine\InternetSim\.mono\temp\obj\Debug\InternetSim.pdb
