@@ -10,6 +10,9 @@ onready var sender = get_node(sender_dropdown_path)
 onready var message_text = get_node(message_text_path)
 
 var rng = RandomNumberGenerator.new()
+var MESSAGE_LOG_FILENAME = "MessageLog.txt"
+
+var all_message_history = []
 
 func _ready():
 	rng.randomize()
@@ -18,6 +21,9 @@ func _ready():
 
 func _process(delta):
 	pass
+	
+func get_message_history():
+	return get_history_message()
 
 
 func _on_Send_pressed():
@@ -32,7 +38,48 @@ func _on_Send_pressed():
 	
 	get_node("Main/Button").disabled = false
 	
+
+
+func _on_Player_log_message(player_id, history_message):
+	print("Hello from game node!")
+	all_message_history.append("ID: " + str(player_id) + " | " + str(history_message))
+	print(all_message_history)
+
+
+func _on_Game_tree_exiting():
+	# Save the global messages in messageLog.txt
+	print("Saving global message log.")
+	write_file(MESSAGE_LOG_FILENAME, get_history_message())
 	
+func _on_Game_tree_entered():
+	# Read the global message log into the array
+	print("Loading in message log.")
+	all_message_history = read_file(MESSAGE_LOG_FILENAME)
+
+
+static func write_file(file_name, string):
+	var file = File.new()
+	file.open(file_name, File.WRITE)
+	file.store_string(string)
+	file.close()
+
+
+static func read_file(file_name):
+	var file = File.new()
+	if !file.file_exists(file_name):
+		return []
+		return
+
+	file.open(file_name, File.READ)
+
+	var array = []
+	while(!file.eof_reached()):
+		var line = file.get_line()
+		array.push_back(line)
+
+	file.close()
+	return array
+
 func reset_colors():
 	get_node("Ln1-2").default_color = Color(0.16, 0.16, 0.17, 1)
 	get_node("Ln2-3").default_color = Color(0.16, 0.16, 0.17, 1)
@@ -92,4 +139,19 @@ func select_lines(lines):
 			print(ln_node)
 
 			ln_node.default_color = Color( 0, 0.392157, 0, 1 )
+
+
+
+func get_history_message():
+	var message = ""
+	
+	for i in range(0, all_message_history.size()):
+		if (i + 1 == all_message_history.size()):
+			message += all_message_history[i] 
+		else:
+			message += all_message_history[i] + "\n"
+		
+	return message
+
+
 
