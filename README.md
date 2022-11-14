@@ -1,5 +1,8 @@
 # InternetSim
  A program that kinda simulates how packets are sent
+ 
+ ### Use it yourself:
+ [On this website](https://dashing-marzipan-542b73.netlify.app)
 
 
  # Todo
